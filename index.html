@@ -82,32 +82,29 @@
     .hero-gradient { display: none; }
     .hero-content {
       position: relative; z-index: 2;
-      max-width: 860px; padding: 60px 32px;
-      background: rgba(255,255,255,0.82);
-      backdrop-filter: blur(10px);
-      border-radius: 16px;
-      margin: 40px 24px;
-      box-shadow: 0 8px 48px rgba(26,24,20,0.12);
+      max-width: 860px; padding: 60px 24px;
+      background: radial-gradient(ellipse 85% 95% at 50% 50%, rgba(255,255,255,0.62) 0%, rgba(255,255,255,0.18) 65%, rgba(255,255,255,0) 100%);
     }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 7px 16px; border-radius: 20px;
-      background: rgba(255,255,255,.85); border: 1px solid rgba(201,168,76,.5);
+      background: rgba(0,0,0,.35); border: 1px solid rgba(201,168,76,.6);
       font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
-      color: #8a6d00; margin-bottom: 28px;
+      color: var(--gold); margin-bottom: 28px;
       backdrop-filter: blur(6px);
     }
     .hero h1 {
       font-family: var(--font-h);
       font-size: clamp(32px, 5.5vw, 62px);
-      font-weight: 800; line-height: 1.1; color: var(--dark);
+      font-weight: 800; line-height: 1.1; color: var(--white);
       margin-bottom: 20px;
-      text-shadow: 0 1px 3px rgba(255,255,255,.6);
+      text-shadow: 0 2px 16px rgba(0,0,0,.55), 0 1px 4px rgba(0,0,0,.4);
     }
     .hero h1 em { color: var(--gold); font-style: normal; }
     .hero-sub {
-      font-size: clamp(15px, 2vw, 18px); color: rgba(26,24,20,.75);
+      font-size: clamp(15px, 2vw, 18px); color: rgba(255,255,255,.92);
       line-height: 1.7; margin-bottom: 16px;
+      text-shadow: 0 1px 8px rgba(0,0,0,.5);
     }
     .hero-pills {
       display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
@@ -116,9 +113,9 @@
     .pill {
       display: inline-flex; align-items: center; gap: 6px;
       padding: 6px 14px; border-radius: 20px;
-      background: rgba(255,255,255,.75); border: 1px solid rgba(26,24,20,.15);
-      font-size: 13px; color: rgba(26,24,20,.8); font-weight: 500;
-      backdrop-filter: blur(4px);
+      background: rgba(0,0,0,.35); border: 1px solid rgba(255,255,255,.25);
+      font-size: 13px; color: rgba(255,255,255,.9); font-weight: 500;
+      backdrop-filter: blur(6px);
     }
     .pill svg { stroke: var(--gold); flex-shrink: 0; }
     .btn-call-hero {
@@ -131,7 +128,7 @@
       transition: background .18s, transform .15s;
     }
     .btn-call-hero:hover { background: #e0b840; transform: translateY(-2px); animation: none; }
-    .hero-note { margin-top: 14px; font-size: 13px; color: rgba(26,24,20,.55); }
+    .hero-note { margin-top: 14px; font-size: 13px; color: rgba(255,255,255,.7); text-shadow: 0 1px 4px rgba(0,0,0,.4); }
     .hero-btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; align-items: center; margin-bottom: 0; }
     .btn-wa-hero {
       display: inline-flex; align-items: center; justify-content: center; gap: 10px;
