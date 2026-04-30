@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Isolation Lyon – Divisez vos factures d'énergie par 2 | Selesta RGE Qualibat</title>
+  <meta name="description" content="Isolation thermique à Lyon et Rhône-Alpes. Selesta, entreprise RGE Qualibat. Travaux soignés, devis gratuit sous 48h. Économisez jusqu'à 50% sur vos factures." />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="icon" type="image/png" href="./favicon_32x32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold:   #C9A84C;
+      --gold-d: #A07830;
+      --dark:   #1E1C18;
+      --ink:    #1A1814;
+      --ink-60: rgba(26,24,20,.6);
+      --cream:  #F5F0E8;
+      --white:  #FFFFFF;
+      --red:    #D93025;
+      --font-h: 'Playfair Display', Georgia, serif;
+      --font-b: 'Instrument Sans', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-b); color: var(--ink); background: var(--white); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.03)} }
+    @keyframes spin  { to{transform:rotate(360deg)} }
+
+    /* ── STICKY TOP BAR ── */
+    .topbar {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--dark);
+      border-bottom: 2px solid var(--gold);
+    }
+    .topbar-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 24px; height: 56px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .topbar-logo { font-family: var(--font-h); font-size: 18px; font-weight: 700; color: var(--white); letter-spacing: 1px; }
+    .topbar-logo span { color: var(--gold); }
+    .topbar-phone {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 20px; border-radius: 4px;
+      background: var(--gold); color: var(--dark);
+      font-size: 14px; font-weight: 700; letter-spacing: .3px;
+      transition: background .18s;
+    }
+    .topbar-phone:hover { background: #e0b840; }
+    .topbar-phone svg { flex-shrink: 0; }
+    .topbar-phone-text { /* text label inside topbar buttons */ }
+    .topbar-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(212,175,55,0.15); border: 1px solid rgba(212,175,55,0.45);
+      border-radius: 20px; padding: 5px 14px;
+      color: #f0d070; font-size: 12.5px; font-weight: 600;
+      letter-spacing: 0.6px; white-space: nowrap;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; min-height: 88vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; overflow: hidden;
+      background: var(--dark);
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://isolationlyonrenovation.selesta.fr/images/givors-apres.png');
+      background-size: cover; background-position: center;
+      opacity: .25;
+    }
+    .hero-gradient {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(30,28,24,.85) 0%, rgba(30,28,24,.6) 50%, rgba(30,28,24,.9) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 820px; padding: 60px 24px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 7px 16px; border-radius: 20px;
+      background: rgba(201,168,76,.15); border: 1px solid rgba(201,168,76,.4);
+      font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: var(--font-h);
+      font-size: clamp(32px, 5.5vw, 62px);
+      font-weight: 800; line-height: 1.1; color: var(--white);
+      margin-bottom: 20px;
+    }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero-sub {
+      font-size: clamp(15px, 2vw, 18px); color: rgba(255,255,255,.78);
+      line-height: 1.7; margin-bottom: 16px;
+    }
+    .hero-pills {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+      margin-bottom: 36px;
+    }
+    .pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 14px; border-radius: 20px;
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+      font-size: 13px; color: rgba(255,255,255,.75); font-weight: 500;
+    }
+    .pill svg { stroke: var(--gold); flex-shrink: 0; }
+    .btn-call-hero {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 18px 40px; border-radius: 6px;
+      background: var(--gold); color: var(--dark);
+      font-size: 18px; font-weight: 700; letter-spacing: .3px;
+      box-shadow: 0 8px 30px rgba(201,168,76,.4);
+      animation: pulse 2.5s ease-in-out infinite;
+      transition: background .18s, transform .15s;
+    }
+    .btn-call-hero:hover { background: #e0b840; transform: translateY(-2px); animation: none; }
+    .hero-note { margin-top: 14px; font-size: 13px; color: rgba(255,255,255,.4); }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; align-items: center; margin-bottom: 0; }
+    .btn-wa-hero {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 18px 32px; border-radius: 6px;
+      background: #25D366; color: #fff;
+      font-size: 17px; font-weight: 700; letter-spacing: .2px;
+      box-shadow: 0 8px 24px rgba(37,211,102,.35);
+      transition: background .18s, transform .15s;
+    }
+    .btn-wa-hero:hover { background: #1ebe5a; transform: translateY(-2px); }
+
+    /* ── WHATSAPP FLOATING BUTTON ── */
+    .wa-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      width: 60px; height: 60px; border-radius: 50%;
+      background: #25D366;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 24px rgba(37,211,102,.5);
+      transition: transform .2s, box-shadow .2s;
+      animation: wa-bounce 2s ease-in-out 3s 3;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(37,211,102,.6); }
+    .wa-float svg { width: 30px; height: 30px; fill: #fff; }
+    .wa-float-tooltip {
+      position: absolute; right: 70px; top: 50%; transform: translateY(-50%);
+      background: var(--dark); color: var(--white);
+      font-size: 13px; font-weight: 600; white-space: nowrap;
+      padding: 7px 14px; border-radius: 6px;
+      opacity: 0; pointer-events: none;
+      transition: opacity .2s;
+    }
+    .wa-float-tooltip::after {
+      content: ''; position: absolute; right: -6px; top: 50%; transform: translateY(-50%);
+      border: 6px solid transparent; border-right: none;
+      border-left-color: var(--dark);
+    }
+    .wa-float:hover .wa-float-tooltip { opacity: 1; }
+    @keyframes wa-bounce {
+      0%,100% { transform: scale(1); }
+      50%      { transform: scale(1.15); }
+    }
+    @media (max-width: 700px) {
+      .wa-float { bottom: 20px; right: 16px; width: 52px; height: 52px; }
+      .wa-float svg { width: 26px; height: 26px; }
+    }
+
+    /* ── CERTIFICATIONS ── */
+    .certifs { background: var(--white); border-bottom: 1px solid rgba(26,24,20,.08); }
+    .certifs-inner {
+      max-width: 900px; margin: 0 auto; padding: 32px 24px;
+      display: flex; align-items: center; justify-content: center;
+      gap: 40px; flex-wrap: wrap;
+    }
+    .certif-item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .certif-item img { height: 52px; width: auto; object-fit: contain; filter: grayscale(20%); }
+    .certif-label { font-size: 10px; color: var(--ink-60); font-weight: 500; letter-spacing: .5px; text-align: center; }
+
+    /* ── AVANT/APRÈS LIGHTNING ── */
+    .reals { background: var(--cream); padding: 72px 0; }
+    .reals-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .reals-header { text-align: center; margin-bottom: 52px; }
+    .section-tag {
+      display: inline-block; font-size: 11px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--font-h);
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 700; color: var(--ink); line-height: 1.15;
+    }
+    .project-card {
+      background: var(--white); border-radius: 10px; overflow: hidden;
+      box-shadow: 0 4px 24px rgba(26,24,20,.08);
+      margin-bottom: 32px;
+    }
+    .project-header {
+      padding: 24px 28px 20px;
+      border-bottom: 1px solid rgba(26,24,20,.07);
+      display: flex; align-items: center; gap: 14px;
+    }
+    .project-num {
+      flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%;
+      background: var(--gold); color: var(--dark);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; font-weight: 700;
+    }
+    .project-title { font-family: var(--font-h); font-size: 18px; font-weight: 700; color: var(--ink); }
+    .project-loc   { font-size: 13px; color: var(--gold); font-weight: 600; letter-spacing: .5px; margin-top: 2px; }
+
+    /* Slider container */
+    .slider-wrap {
+      position: relative; overflow: hidden;
+      height: 440px; cursor: none;
+      background: #111;
+      user-select: none;
+    }
+    @media (max-width: 700px) { .slider-wrap { height: 260px; } }
+
+    .slider-wrap .sl-layer {
+      position: absolute; inset: 0;
+    }
+    .slider-wrap .sl-layer img {
+      width: 100%; height: 100%; object-fit: cover; pointer-events: none;
+      display: block;
+    }
+    .slider-wrap .sl-svg {
+      position: absolute; inset: 0; pointer-events: none; z-index: 20;
+    }
+    /* Hover hint labels */
+    .slider-wrap .sl-hint {
+      position: absolute; bottom: 16px; z-index: 30;
+      padding: 5px 14px; border-radius: 20px;
+      font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      pointer-events: none; transition: opacity .3s;
+    }
+    .slider-wrap .sl-hint-left  { left: 16px;  background: rgba(26,24,20,.7); color: rgba(255,255,255,.9); }
+    .slider-wrap .sl-hint-right { right: 16px; background: var(--gold); color: var(--dark); }
+    /* Cursor dot */
+    .slider-wrap .sl-cursor {
+      position: absolute; z-index: 40; pointer-events: none;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(201,168,76,.15);
+      border: 2px solid var(--gold);
+      transform: translate(-50%, -50%);
+      transition: width .2s, height .2s, background .2s;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .slider-wrap:hover .sl-cursor { width: 48px; height: 48px; }
+    .sl-cursor-arrows {
+      font-size: 12px; color: var(--gold); font-weight: 700; letter-spacing: -1px;
+    }
+
+    /* ── POURQUOI ── */
+    .why { background: var(--white); padding: 72px 0; }
+    .why-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .why-header { text-align: center; margin-bottom: 48px; }
+    .why-sub { font-size: 16px; color: var(--ink-60); margin-top: 12px; }
+    .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .why-card {
+      padding: 32px 28px; border-radius: 10px;
+      border: 1px solid rgba(26,24,20,.08);
+      text-align: center; transition: box-shadow .25s, transform .25s, border-color .25s;
+    }
+    .why-card:hover { box-shadow: 0 8px 32px rgba(201,168,76,.12); transform: translateY(-4px); border-color: rgba(201,168,76,.3); }
+    .why-icon {
+      width: 64px; height: 64px; border-radius: 16px;
+      background: rgba(201,168,76,.1); border: 1px solid rgba(201,168,76,.2);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .why-icon svg { width: 28px; height: 28px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .why-title { font-family: var(--font-h); font-size: 20px; font-weight: 700; color: var(--ink); margin-bottom: 10px; }
+    .why-desc  { font-size: 15px; color: var(--ink-60); line-height: 1.7; }
+
+    /* ── CTA SECTION ── */
+    .cta-section { background: var(--dark); padding: 72px 0; text-align: center; }
+    .cta-inner { max-width: 700px; margin: 0 auto; padding: 0 24px; }
+    .cta-section h2 {
+      font-family: var(--font-h);
+      font-size: clamp(26px, 4vw, 44px);
+      font-weight: 700; color: var(--white); margin-bottom: 14px; line-height: 1.2;
+    }
+    .cta-section h2 em { color: var(--gold); font-style: normal; }
+    .cta-desc { font-size: 16px; color: rgba(255,255,255,.6); margin-bottom: 32px; line-height: 1.7; }
+    .cta-urgency {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 18px; border-radius: 20px;
+      background: rgba(217,48,37,.15); border: 1px solid rgba(217,48,37,.3);
+      font-size: 13px; color: #ff6b6b; font-weight: 600;
+      margin-bottom: 28px;
+    }
+    .btn-call-cta {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 18px 44px; border-radius: 6px;
+      background: var(--gold); color: var(--dark);
+      font-size: 18px; font-weight: 700;
+      box-shadow: 0 8px 30px rgba(201,168,76,.35);
+      transition: background .18s, transform .15s;
+    }
+    .btn-call-cta:hover { background: #e0b840; transform: translateY(-2px); }
+    .cta-note { margin-top: 16px; font-size: 13px; color: rgba(255,255,255,.35); }
+
+    /* ── FOOTER ── */
+    .footer { background: #141210; padding: 32px 24px; text-align: center; border-top: 1px solid rgba(201,168,76,.15); }
+    .footer-logo { font-family: var(--font-h); font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .footer-logo span { color: var(--gold); }
+    .footer-text { font-size: 13px; color: rgba(255,255,255,.35); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .topbar-logo { font-size: 15px; }
+      .topbar-badge { display: none; }
+      .topbar-phone { padding: 10px 12px; font-size: 13px; }
+      .topbar-phone-text { display: none; }
+      .why-grid { grid-template-columns: 1fr; }
+      .certifs-inner { gap: 24px; }
+      .certif-item img { height: 40px; }
+      .project-photos { grid-template-columns: 1fr; }
+      .project-photo:first-child { border-bottom: 2px solid var(--cream); }
+      .project-divider { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ STICKY TOP BAR ══ -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-logo">Sel<span>esta</span></span>
+    <span class="topbar-badge">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Appel &amp; RDV&nbsp; 24h/24 – 7j/7
+    </span>
+    <div style="display:flex;gap:10px;align-items:center;">
+      <a href="tel:+33472659635" class="topbar-phone" aria-label="Appeler Selesta">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.22a16 16 0 0 0 6 6l.95-.9a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.92 16"/></svg>
+        <span class="topbar-phone-text">04 72 65 96 35</span>
+      </a>
+      <a href="https://wa.me/33765165430" target="_blank" rel="noopener" class="topbar-phone" aria-label="WhatsApp Selesta" style="background:#25D366;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span class="topbar-phone-text">07 65 16 54 30</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-gradient"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Entreprise certifiée RGE Qualibat
+    </div>
+    <h1>Divisez vos factures d'énergie <em>par 2</em> avec Selesta à Lyon</h1>
+    <p class="hero-sub">Selesta est une entreprise spécialisée dans l'isolation thermique et le ravalement de façades à Lyon et en Rhône-Alpes. Devis gratuit et rapide, accompagnement complet, travaux soignés.</p>
+    <div class="hero-pills">
+      <span class="pill">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        Travaux soignés
+      </span>
+      <span class="pill">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        Devis gratuits & rapides
+      </span>
+      <span class="pill">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        Accompagnement complet
+      </span>
+      <span class="pill">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        RGE Qualibat
+      </span>
+    </div>
+    <div class="hero-btns">
+      <a href="tel:+33472659635" class="btn-call-hero" aria-label="Appeler Selesta maintenant">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.22a16 16 0 0 0 6 6l.95-.9a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.92 16"/></svg>
+        Appeler maintenant
+      </a>
+      <a href="https://wa.me/33765165430" target="_blank" rel="noopener" class="btn-wa-hero" aria-label="WhatsApp Selesta">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp – 07 65 16 54 30
+      </a>
+    </div>
+    <p class="hero-note">Appel & prise de RDV 24h/24 – 7j/7 · Déplacement gratuit</p>
+  </div>
+</section>
+
+<!-- ══ CERTIFICATIONS ══ -->
+<div class="certifs" aria-label="Nos certifications et partenaires">
+  <div class="certifs-inner">
+    <div class="certif-item">
+      <img src="https://isolationlyonrenovation.selesta.fr/images/maprimerenov.png" alt="MaPrimeRénov" loading="lazy" />
+    </div>
+    <div class="certif-item">
+      <img src="https://isolationlyonrenovation.selesta.fr/images/cee.png" alt="CEE – Certificats d'Économies d'Énergie" loading="lazy" />
+    </div>
+    <div class="certif-item">
+      <img src="https://isolationlyonrenovation.selesta.fr/images/rge.png" alt="RGE Reconnu Garant de l'Environnement" loading="lazy" />
+    </div>
+    <div class="certif-item">
+      <img src="https://isolationlyonrenovation.selesta.fr/images/april.png" alt="April assurance" loading="lazy" />
+    </div>
+    <div class="certif-item">
+      <img src="https://isolationlyonrenovation.selesta.fr/images/garantie10.png" alt="Garantie 10 ans" loading="lazy" />
+    </div>
+  </div>
+</div>
+
+<!-- ══ AVANT / APRÈS ══ -->
+<section class="reals" aria-labelledby="reals-title">
+  <div class="reals-inner">
+    <div class="reals-header">
+      <p class="section-tag">Réalisations</p>
+      <h2 class="section-title" id="reals-title">Ils nous ont fait confiance</h2>
+    </div>
+
+    <!-- Chantier 1 : Givors -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-num">1</div>
+        <div>
+          <p class="project-title">Isolation par l'extérieur et ravalement de façades</p>
+          <p class="project-loc">Givors – 69700</p>
+        </div>
+      </div>
+      <div class="slider-wrap"
+           data-before="https://isolationlyonrenovation.selesta.fr/images/givors-avant.png"
+           data-after="https://isolationlyonrenovation.selesta.fr/images/givors-apres.png"
+           aria-label="Comparaison avant/après – Givors">
+      </div>
+    </div>
+
+    <!-- Chantier 2 : Vénissieux -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-num">2</div>
+        <div>
+          <p class="project-title">Isolation par l'extérieur et ravalement de façades</p>
+          <p class="project-loc">Vénissieux – 69200</p>
+        </div>
+      </div>
+      <div class="slider-wrap"
+           data-before="https://isolationlyonrenovation.selesta.fr/images/venissieux-avant.png"
+           data-after="https://isolationlyonrenovation.selesta.fr/images/venissieux-apres.png"
+           aria-label="Comparaison avant/après – Vénissieux">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ POURQUOI NOUS CHOISIR ══ -->
+<section class="why" aria-labelledby="why-title">
+  <div class="why-inner">
+    <div class="why-header">
+      <p class="section-tag">Nos engagements</p>
+      <h2 class="section-title" id="why-title">Pourquoi nous choisir ?</h2>
+      <p class="why-sub">Entreprise locale basée à Lyon – Appel & RDV 24h/24, 7j/7 · Devis gratuit · Déplacement offert</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3 class="why-title">Confort thermique</h3>
+        <p class="why-desc">Fini les parois froides et les courants d'air. Une isolation performante pour un intérieur agréable toute l'année, été comme hiver.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <h3 class="why-title">Économies d'énergie</h3>
+        <p class="why-desc">Réduisez vos factures de chauffage jusqu'à 50%. Profitez des aides MaPrimeRénov et des Certificats d'Économies d'Énergie.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3 class="why-title">Savoir-faire lyonnais</h3>
+        <p class="why-desc">Proximité et réactivité. Nos équipes interviennent à Lyon et sur toute la métropole lyonnaise avec le sérieux d'un artisan local.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA FINAL ══ -->
+<section class="cta-section" aria-labelledby="cta-title">
+  <div class="cta-inner">
+    <div class="cta-urgency">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Places limitées – Réponse sous 48h garantie
+    </div>
+    <h2 id="cta-title">Prêt à réduire vos factures <em>dès cet hiver</em> ?</h2>
+    <p class="cta-desc">Contactez-nous dès maintenant pour obtenir votre devis gratuit et sans engagement. Nos experts analysent votre projet et vous accompagnent jusqu'à la fin des travaux.</p>
+    <a href="tel:+33472659635" class="btn-call-cta" aria-label="Appeler Selesta pour un devis gratuit">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.22a16 16 0 0 0 6 6l.95-.9a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.92 16"/></svg>
+      Appeler maintenant
+    </a>
+    <p class="cta-note">Appel & RDV 24h/24 – 7j/7 · Devis gratuit · Déplacement offert · Sans engagement</p>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <p class="footer-logo">Sel<span>esta</span></p>
+  <p class="footer-text">Selesta – Entreprise du Bâtiment Rhône-Alpes · RGE Qualibat · © 2025</p>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════════
+   LIGHTNING SPLIT – Vanilla JS port of the React component
+   ═══════════════════════════════════════════════ */
+(function() {
+  const CFG = {
+    timeClamp:   0.05,
+    segments:    48,
+    amps:        [0.4, -0.8, 0.6],
+    freqs:       [0.7,  2.7,  3.9],
+    speeds:      [-1.32, 0.42, 0.95],
+    shimmer:     { speed: 4.2, freq: 8.5, amp: 0.25 },
+    easeK:       6,
+    clipOffset:  25,
+    svg: {
+      outer: { w: 3,   color: 'rgba(173,216,230,0.75)' },
+      mid:   { w: 2.2, color: 'rgba(135,206,250,0.55)' },
+      core:  { w: 1.2, color: 'white', opacity: 0.95   },
+      glowBlur: 0.9,
+    }
+  };
+
+  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+
+  function mkPolyline(svg, stroke, sw, filter, opacity) {
+    const p = document.createElementNS('http://www.w3.org/2000/svg','polyline');
+    p.setAttribute('fill','none');
+    p.setAttribute('stroke', stroke);
+    p.setAttribute('stroke-width', sw);
+    p.setAttribute('vector-effect','non-scaling-stroke');
+    if (filter)  p.setAttribute('filter', filter);
+    if (opacity != null) p.setAttribute('stroke-opacity', opacity);
+    svg.appendChild(p);
+    return p;
+  }
+
+  function initSlider(wrap) {
+    const beforeSrc = wrap.dataset.before;
+    const afterSrc  = wrap.dataset.after;
+
+    /* ── Layers ── */
+    // After (right) – base
+    const afterLayer = document.createElement('div');
+    afterLayer.className = 'sl-layer';
+    const afterImg = document.createElement('img');
+    afterImg.src = afterSrc; afterImg.alt = 'Après travaux';
+    afterLayer.appendChild(afterImg);
+
+    // Before (left) – clipped
+    const beforeLayer = document.createElement('div');
+    beforeLayer.className = 'sl-layer';
+    const beforeImg = document.createElement('img');
+    beforeImg.src = beforeSrc; beforeImg.alt = 'Avant travaux';
+    beforeLayer.appendChild(beforeImg);
+
+    /* ── SVG arc ── */
+    const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+    svg.classList.add('sl-svg');
+    svg.setAttribute('width','100%');
+    svg.setAttribute('height','100%');
+    svg.setAttribute('viewBox','0 0 100 100');
+    svg.setAttribute('preserveAspectRatio','none');
+
+    const filterId = 'lglow-' + Math.random().toString(36).slice(2);
+    svg.innerHTML = `<defs>
+      <filter id="${filterId}" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="${CFG.svg.glowBlur}" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>`;
+
+    const glow = `url(#${filterId})`;
+    const polyOuter = mkPolyline(svg, CFG.svg.outer.color, CFG.svg.outer.w, glow);
+    const polyMid   = mkPolyline(svg, CFG.svg.mid.color,   CFG.svg.mid.w,   glow);
+    const polyCore  = mkPolyline(svg, CFG.svg.core.color,  CFG.svg.core.w,  null, CFG.svg.core.opacity);
+
+    /* ── Labels ── */
+    const hintLeft  = document.createElement('span');
+    hintLeft.className  = 'sl-hint sl-hint-left';
+    hintLeft.textContent = 'Avant';
+    const hintRight = document.createElement('span');
+    hintRight.className = 'sl-hint sl-hint-right';
+    hintRight.textContent = 'Après';
+
+    /* ── Custom cursor dot ── */
+    const cursor = document.createElement('div');
+    cursor.className = 'sl-cursor';
+    cursor.innerHTML = '<span class="sl-cursor-arrows">←→</span>';
+    cursor.style.opacity = '0';
+
+    /* ── Mount ── */
+    wrap.appendChild(afterLayer);
+    wrap.appendChild(beforeLayer);
+    wrap.appendChild(svg);
+    wrap.appendChild(hintLeft);
+    wrap.appendChild(hintRight);
+    wrap.appendChild(cursor);
+
+    /* ── State ── */
+    let targetPos  = 60;
+    let displayPos = 60;
+    let time = 0;
+    let last = performance.now();
+    let cursorX = 0, cursorY = 0;
+    let isHovering = false;
+
+    /* ── Mouse ── */
+    wrap.addEventListener('mouseenter', (e) => {
+      isHovering = true;
+      cursor.style.opacity = '1';
+    });
+    wrap.addEventListener('mouseleave', () => {
+      isHovering = false;
+      targetPos = 60;
+      cursor.style.opacity = '0';
+    });
+    wrap.addEventListener('mousemove', (e) => {
+      const r = wrap.getBoundingClientRect();
+      const xPct = ((e.clientX - r.left) / r.width) * 100;
+      cursorX = e.clientX - r.left;
+      cursorY = e.clientY - r.top;
+      cursor.style.left = cursorX + 'px';
+      cursor.style.top  = cursorY + 'px';
+      // Left half → expand before (left), Right half → expand after (right)
+      targetPos = xPct < 50 ? 85 : 15;
+    });
+
+    /* ── Touch support ── */
+    wrap.addEventListener('touchmove', (e) => {
+      const r = wrap.getBoundingClientRect();
+      const t = e.touches[0];
+      const xPct = ((t.clientX - r.left) / r.width) * 100;
+      targetPos = xPct < 50 ? 85 : 15;
+    }, { passive: true });
+    wrap.addEventListener('touchend', () => { targetPos = 60; });
+
+    /* ── Points calculation ── */
+    function getPoints() {
+      const topX    = clamp(displayPos, 0, 100);
+      const bottomX = clamp(displayPos - CFG.clipOffset, 0, 100);
+      const pts = [];
+      for (let i = 0; i <= CFG.segments; i++) {
+        const t  = i / CFG.segments;
+        const y  = t * 100;
+        const base = topX * (1 - t) + bottomX * t;
+        let off = 0;
+        for (let k = 0; k < CFG.amps.length; k++) {
+          off += CFG.amps[k] * Math.sin(2 * Math.PI * (CFG.freqs[k] * t + CFG.speeds[k] * time) + k * 1.3);
+        }
+        off += CFG.shimmer.amp * Math.sin(2 * Math.PI * (CFG.shimmer.freq * t + CFG.shimmer.speed * time));
+        pts.push({ x: clamp(base + off, 0, 100), y });
+      }
+      return pts;
+    }
+
+    /* ── Animation loop ── */
+    function tick(now) {
+      const dt = Math.min(CFG.timeClamp, (now - last) / 1000);
+      last = now;
+      time += dt;
+
+      // Spring ease
+      displayPos += (targetPos - displayPos) * (1 - Math.exp(-CFG.easeK * dt));
+
+      const pts = getPoints();
+
+      // Clip-path for before layer
+      const edgePts = pts.map(p => `${p.x}% ${p.y}%`).join(', ');
+      const clip = `polygon(0% 0%, ${edgePts}, 0% 100%)`;
+      beforeLayer.style.clipPath = clip;
+      beforeLayer.style.webkitClipPath = clip;
+
+      // SVG polylines
+      const ptStr = pts.map(p => `${p.x},${p.y}`).join(' ');
+      polyOuter.setAttribute('points', ptStr);
+      polyMid.setAttribute('points',   ptStr);
+      polyCore.setAttribute('points',  ptStr);
+
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  /* Init all sliders on DOMContentLoaded */
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.slider-wrap').forEach(initSlider);
+  });
+})();
+</script>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/33765165430" target="_blank" rel="noopener" class="wa-float" aria-label="Contacter Selesta sur WhatsApp">
+  <div class="wa-float-tooltip">07 65 16 54 30</div>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.128.558 4.122 1.528 5.852L0 24l6.335-1.508A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.017-1.374l-.36-.214-3.732.889.94-3.638-.235-.374A9.818 9.818 0 1112 21.818z"/>
+  </svg>
+</a>
+
+</body>
+</html>
