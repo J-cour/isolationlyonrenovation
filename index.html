@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Isolation Lyon – Divisez vos factures d'énergie par 2 | Selesta RGE Qualibat</title>
   <meta name="description" content="Isolation thermique à Lyon et Rhône-Alpes. Selesta, entreprise RGE Qualibat. Travaux soignés, devis gratuit sous 48h. Économisez jusqu'à 50% sur vos factures." />
-  <meta name="robots" content="noindex, nofollow" />
+  <meta name="robots" content="index, follow" />
+  <meta name="google-site-verification" content="06MCiDTyOl_RqSbRIgXbnAJDl2SLK7fL62Lj80QZrII" />
 
   <link rel="icon" type="image/png" href="./favicon_32x32.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -70,17 +71,17 @@
       position: relative; min-height: 88vh;
       display: flex; align-items: center; justify-content: center;
       text-align: center; overflow: hidden;
-      background: var(--dark);
+      background: #f5f0e8;
     }
     .hero-bg {
       position: absolute; inset: 0;
       background-image: url('https://isolationlyonrenovation.selesta.fr/images/givors-apres.png');
       background-size: cover; background-position: center;
-      opacity: .25;
+      opacity: .9;
     }
     .hero-gradient {
       position: absolute; inset: 0;
-      background: linear-gradient(180deg, rgba(30,28,24,.85) 0%, rgba(30,28,24,.6) 50%, rgba(30,28,24,.9) 100%);
+      background: linear-gradient(180deg, rgba(245,240,232,.82) 0%, rgba(245,240,232,.55) 45%, rgba(245,240,232,.88) 100%);
     }
     .hero-content {
       position: relative; z-index: 2;
@@ -89,19 +90,21 @@
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 7px 16px; border-radius: 20px;
-      background: rgba(201,168,76,.15); border: 1px solid rgba(201,168,76,.4);
+      background: rgba(255,255,255,.85); border: 1px solid rgba(201,168,76,.5);
       font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 28px;
+      color: #8a6d00; margin-bottom: 28px;
+      backdrop-filter: blur(6px);
     }
     .hero h1 {
       font-family: var(--font-h);
       font-size: clamp(32px, 5.5vw, 62px);
-      font-weight: 800; line-height: 1.1; color: var(--white);
+      font-weight: 800; line-height: 1.1; color: var(--dark);
       margin-bottom: 20px;
+      text-shadow: 0 1px 3px rgba(255,255,255,.6);
     }
     .hero h1 em { color: var(--gold); font-style: normal; }
     .hero-sub {
-      font-size: clamp(15px, 2vw, 18px); color: rgba(255,255,255,.78);
+      font-size: clamp(15px, 2vw, 18px); color: rgba(26,24,20,.75);
       line-height: 1.7; margin-bottom: 16px;
     }
     .hero-pills {
@@ -111,8 +114,9 @@
     .pill {
       display: inline-flex; align-items: center; gap: 6px;
       padding: 6px 14px; border-radius: 20px;
-      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
-      font-size: 13px; color: rgba(255,255,255,.75); font-weight: 500;
+      background: rgba(255,255,255,.75); border: 1px solid rgba(26,24,20,.15);
+      font-size: 13px; color: rgba(26,24,20,.8); font-weight: 500;
+      backdrop-filter: blur(4px);
     }
     .pill svg { stroke: var(--gold); flex-shrink: 0; }
     .btn-call-hero {
@@ -125,7 +129,7 @@
       transition: background .18s, transform .15s;
     }
     .btn-call-hero:hover { background: #e0b840; transform: translateY(-2px); animation: none; }
-    .hero-note { margin-top: 14px; font-size: 13px; color: rgba(255,255,255,.4); }
+    .hero-note { margin-top: 14px; font-size: 13px; color: rgba(26,24,20,.55); }
     .hero-btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; align-items: center; margin-bottom: 0; }
     .btn-wa-hero {
       display: inline-flex; align-items: center; justify-content: center; gap: 10px;
