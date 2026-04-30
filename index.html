@@ -14,6 +14,7 @@
 
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon_32x32.png">
   <link rel="shortcut icon" href="/favicon_32x32.png">
+  <link rel="preload" as="image" href="isolation exterieur venissieux lyon rhone selesta cee ma prim renov rge .png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -820,14 +821,14 @@
     const afterLayer = document.createElement('div');
     afterLayer.className = 'sl-layer';
     const afterImg = document.createElement('img');
-    afterImg.src = afterSrc; afterImg.alt = 'Après travaux';
+    afterImg.src = afterSrc; afterImg.alt = 'Après travaux'; afterImg.loading = 'lazy';
     afterLayer.appendChild(afterImg);
 
     // Before (left) – clipped
     const beforeLayer = document.createElement('div');
     beforeLayer.className = 'sl-layer';
     const beforeImg = document.createElement('img');
-    beforeImg.src = beforeSrc; beforeImg.alt = 'Avant travaux';
+    beforeImg.src = beforeSrc; beforeImg.alt = 'Avant travaux'; beforeImg.loading = 'lazy';
     beforeLayer.appendChild(beforeImg);
 
     /* ── SVG arc ── */
