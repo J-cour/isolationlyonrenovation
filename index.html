@@ -988,24 +988,52 @@ document.querySelectorAll('.zone-toggle').forEach(btn => {
   });
 });
 
-// ── FORMULAIRE DEVIS ──
+</script>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCv6cUiIc1U4xVzhRrP3F4CsJHgUP2wKTY",
+  authDomain: "devis-lading-page.firebaseapp.com",
+  projectId: "devis-lading-page",
+  storageBucket: "devis-lading-page.firebasestorage.app",
+  messagingSenderId: "177700114918",
+  appId: "1:177700114918:web:65c6bbcc63c66ea747c627"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
 document.getElementById('devis-form').addEventListener('submit', async function(e) {
   e.preventDefault();
   const btn = this.querySelector('.form-submit');
   btn.textContent = 'Envoi en cours…';
   btn.disabled = true;
+
   const data = {
-    prenom: this.prenom.value, nom: this.nom.value,
-    telephone: this.telephone.value, codepostal: this.codepostal.value,
-    travaux: this.travaux.value, message: this.message.value,
-    source: 'landing-isolationlyonrenovation'
+    prenom: this.prenom.value,
+    nom: this.nom.value,
+    telephone: this.telephone.value,
+    codepostal: this.codepostal.value,
+    travaux: this.travaux.value,
+    message: this.message.value,
+    source: 'landing-isolationlyonrenovation',
+    createdAt: serverTimestamp()
   };
+
   try {
-    await fetch('https://hook.eu1.make.com/fp9rlqcpfge5gjyvwhqvhaivvs6ajiun', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
+    await Promise.all([
+      addDoc(collection(db, 'devis'), data),
+      fetch('https://hook.eu1.make.com/fp9rlqcpfge5gjyvwhqvhaivvs6ajiun', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...data, createdAt: new Date().toISOString() })
+      })
+    ]);
   } catch(err) {}
+
   document.getElementById('devis-form').style.display = 'none';
   document.getElementById('form-success').style.display = 'block';
 });
